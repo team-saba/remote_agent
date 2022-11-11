@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  remote_agent:
+    image: saba/remote_agent:latest
+    container_name: remote_agent
+    build: .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+     - "8888:8888"
+    env_file:
+      - .env
